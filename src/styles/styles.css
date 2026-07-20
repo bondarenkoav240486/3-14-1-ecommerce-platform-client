@@ -1,0 +1,1525 @@
+/* .container, .container-lg, .container-md, .container-sm, .container-xl { */
+
+html {
+    font-size: 14px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    background: url('images/stock-vector-household-appliances-doodle-hand-drawn-seamless-pattern-vector-line-illustration-isolated-from-448991380.jpg');
+    /* background: url('images/stock-vector-household-appliances-doodle-hand-drawn-seamless-pattern-vector-line-illustration-isolated-from-448991380.jpg') center center / cover no-repeat; */
+    /* background: url('images/stock-vector-household-appliances-doodle-hand-drawn-seamless-pattern-vector-line-illustration-isolated-from-448991380.jpg') top center / cover no-repeat; */
+    /* d */
+    background-size: cover;
+    color: #4c719e !important;
+}
+
+body {
+    background-color: #ffffffe8;
+    /* height: 100vh !important; */
+
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling if content overflows */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    /* 100% of the viewport width */
+}
+
+.container {
+    max-width: 1540px;
+    /* padding: 0.5rem 1rem; */
+    padding: 0rem 1rem;
+    /* background: white; */
+}
+
+.Row {
+    display: flex;
+}
+
+.Col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!......................... */
+
+/* Основні стилі Navbar */
+.full-width-navbar {
+    width: 100%;
+    /* background: #4c719e !important; */
+    /* background: #185783 !important; */
+    /* background: #176798 !important; */
+    background: #042547bf !important;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* box-shadow: 0 4px 6px rgb(0 0 0 / 51%); */
+    box-shadow: 0 4px 6px rgb(0 0 0 / 51%);
+    border-bottom: 2px solid #0000002b;
+    margin-bottom: 2rem;
+}
+
+.navbar {
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* margin-bottom: 2rem; */
+    background: #4c719e00 !important;
+    flex-wrap: wrap;
+    /* box-shadow: 0 4px 6px rgb(0 0 0 / 51%); */
+    /* border-bottom: 2px solid #0000002b; */
+}
+
+.navbar .button {
+    margin-left: 2rem;
+    color: white;
+}
+
+
+/* BURGERMENU */
+
+/* .BurgerMenuNav  */
+.Drawerburgmenu .MuiPaper-root,
+.BurgerMenuDrawerCatalogTypeBar .MuiPaper-root {
+    width: 19rem !IMPORTANT;
+    background-color: #1c5d80f2 !important;
+    color: rgb(255 255 255) !important;
+
+}
+
+/* .BurgerMenuNav  */
+.Drawerburgmenu .MuiSvgIcon-root {
+    color: rgb(255, 255, 255) !important;
+}
+
+
+/* Логотип */
+.logo,
+.logo:hover {
+    /* font-size: 2rem; */
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: "Roboto", "Helvetica", "Arial", sans-serif; */
+
+    /* font-family: Arial, sans-serif; */
+    /* font-weight: 500; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* background: red; */
+    margin-left: 1rem;
+}
+
+.logo .text {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    /* color: #279FDA; */
+}
+
+.logo .main_text {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.logo .sub_text {
+    font-size: 0.9rem;
+}
+
+.logo svg {
+    font-size: 3.5rem !important;
+    margin-right: 0.5rem;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* SEARCH/////////////////////////////////////////////////////////// */
+
+/* .SearchInNavbar  */
+.navbar .Search {
+    margin-left: auto;
+}
+
+.Search .css-yz9k0d-MuiInputBase-input {
+    font-size: 1rem;
+}
+
+.Search
+.MuiPaper-root
+/* .css-1vm0r4s-MuiPaper-root  */
+    {
+    /* background-color: #fff !important; */
+    /* color: rgba(0, 0, 0, 0.87); */
+    height: 2rem !important;
+}
+
+.Search svg {
+    font-size: 1.8rem !important;
+}
+
+/* Пошук */
+.css-kl1xo3 {
+    margin-top: 0px !important;
+}
+
+
+
+
+.navbar .SearchButton {
+    display: none;
+}
+
+.navbar .SearchButton svg {
+    /* display: none; */
+    /* font-size: 2.5rem; */
+    font-size: 3.0rem !important;
+}
+
+.DrawerTopSearch .MuiPaper-root {
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4c719ef5 !important;
+    height: 30rem;
+}
+
+.DrawerTopSearch .MuiPaper-root
+
+/* .MuiSvgIcon-root */
+.CloseDrawerTopSearchIcon {
+    position: absolute;
+    top: 1.9rem;
+    right: 1.9rem;
+    right: 8.5%;
+    color: white;
+}
+
+.DrawerTopSearch
+
+/* .MuiPaper-root */
+.Search {
+    width: 83%;
+    /* border:1px solid red */
+}
+
+.DrawerTopSearch .Search form.MuiPaper-root {
+    background-color: white !important;
+}
+
+
+/* .DrawerTopSearch */
+/* .MuiPaper-root */
+/* .Search */
+/* .MuiPaper-root */
+/* .css-kl1xo3  */
+    /* { */
+    /* height: 2rem; */
+    /* margin-top: 16px; */
+/* } */
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
+/* .Search.DrawerTop*/
+.Search.DrawerTop {
+    /* background-color: rgba(255, 0, 0, 0.233); */
+    margin-left: auto;
+}
+
+.Search.DrawerTop .Search.DrawerTop {
+    /* background-color: rgba(255, 0, 0, 0.233); */
+    margin-left: 0;
+}
+
+
+
+
+.Search.DrawerTop .Search .MuiPaper-root {
+    display: flex;
+    align-items: center;
+    /* height: 2rem; */
+    width: 100%;
+    background: white;
+}
+
+.Search.DrawerTop .css-kl1xo3 {
+    width: 83%;
+    margin-top: 16px;
+}
+
+.Search.DrawerTop
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!......................... */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!......................... */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!......................... */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!......................... */
+
+/* Кнопки в Navbar */
+.navbar .button {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+.navbar .button .text {
+    font-size: 0.7rem;
+}
+
+.navbar svg {
+    font-size: 2.5rem;
+}
+
+
+.navbar .button svg {
+    font-size: 2rem;
+    /* margin-right: 0.5rem; */
+}
+
+.navbar .button:hover {
+    color: #e0e0e0;
+}
+
+
+
+
+
+
+
+.Catalog.DrawerTop .css-1nvnyqx-MuiPaper-root-MuiDrawer-paper {
+    background-color: #4c719ef7;
+}
+
+.Catalog.DrawerTop .CloseDrawerTopCatalogIcon {
+    margin-left: 1.1rem;
+    margin-top: 2.1rem;
+    color: white;
+}
+
+.Catalog.DrawerTop .MuiPaper-root {
+    /* margin-left: 1.1rem; */
+    /* margin-top: 2.1rem; */
+    /* color: white; */
+    background: #4c719ef0;
+}
+
+/* CATALOG */
+/* .css-yvetkp-MuiButtonBase-root-MuiIconButton-root {
+    color: #ffffff;
+} */
+
+
+
+/* TypeBar */
+.TypeBar {
+    color: #ffffff;
+}
+
+.TypeBar svg {
+    color: #ffffff;
+}
+
+
+
+.DrawerTop.Catalog .TypeBar .ButtonChevronLeftIcon {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* CART   Кошик  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.Cart {
+    color: #4c719e;
+}
+
+.Cart .cart__clear svg {
+    align-items: center;
+    color: #4c719e !important;
+    font-size: 2.5rem;
+}
+
+.Cart a {
+    color: #4c719e;
+    font-size: 1.42rem;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* vertical-align: middle; */
+    margin: 1rem 0;
+    /* border: 1px solid #4c719e; */
+}
+
+.Cart a .css-i4bv87-MuiSvgIcon-root {
+    font-size: 2.249rem;
+    margin-right: 0.5rem;
+}
+
+.Cart .cart__item-count svg {
+    /* background: #61DAFB; */
+    width: 2.4rem;
+    height: 3rem;
+    color: #4c719e !important;
+}
+
+.Cart .cart__item-count .Row b {
+    align-items: center;
+    margin: 0 .5rem;
+}
+
+.Cart .cart__item-remove .button .MuiSvgIcon-root {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    color: #4c719e;
+}
+
+.Cart .cart__bottom-details {
+    margin-top: 1.95rem;
+    font-size: 1.29rem !important;
+}
+
+.Cart .button pay-btn {
+    font-size: 1.395rem;
+}
+
+.Cart .cart__item-info {
+    margin-left: 1rem;
+}
+
+.Cart .cart__clear {
+    align-items: center;
+    font-size: 1.321rem;
+}
+
+.Cart .button.pay-btn {
+    font-size: 1.395rem;
+    margin-left: 1rem;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
+
+.cart {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    cursor: pointer;
+    color: #4c719e;
+}
+
+.cart .IconAndtext {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.cart .TotalCountNumber {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+
+/* !!!!  EMPTY CART PAGE  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.cart.cart--empty .button.button--black span {
+    color: #fff;
+    font-size: 1.5rem;
+    background: #4c719ea6;
+    border-radius: 0.51rem;
+    padding: 0.0rem 0.995rem;
+    padding-bottom: 0.25rem;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 51%);
+
+}
+
+.cart--empty .Col.center.content .button--black
+
+/* span  */
+    {
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Секції Navbar */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.navbar-nav .button {
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.css-1v5z18m {
+    width: 100% !important;
+}
+
+.Search .MuiInputBase-root {
+    margin: 0;
+    /* border-radius: 12rem; */
+    /* height: 2rem; */
+}
+
+
+
+
+
+
+
+
+
+
+
+.navbar .userNick {
+    margin-left: 2rem;
+    color: #1976D2;
+
+    /* !important; */
+}
+
+.navbar .Col.button.admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .Col.button.admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ml-auto.navbar-nav {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    /* font-size: 0.9rem; */
+}
+
+.navbar .btn {
+    color: #0E86D4;
+}
+
+.navbar .cart {
+    align-items: center;
+    height: 100%;
+}
+
+.navbar .cart .Col.IconAndtext {
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .cart .TotalCountNumber {
+    font-size: 1rem;
+}
+
+.navbar .cart svg {
+    /* height: 1.5rem; */
+    width: 2.5rem;
+}
+
+/* .navbar .MuiPaper-root {
+    width: 100%;
+} */
+
+.App-logo {
+    /* height: 40vmin; */
+    height: 4rem;
+    pointer-events: none;
+    display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.navbar-nav {
+    display: flex;
+    /* align-items: center; */
+    /* центрируем по побочной оси */
+}
+
+.navbar-nav button {
+    margin: 0 8px;
+}
+
+
+
+
+.burger-checkbox {
+    position: absolute;
+    visibility: hidden;
+    /* Це змінить колір кола, якщо ви використовуєте стандартний стиль */
+}
+
+.burger {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 26px;
+    margin: 30px auto;
+
+}
+
+.burger::before,
+.burger::after {
+    content: '';
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    /* background: #000; */
+    background: lightskyblue;
+}
+
+.burger::before {
+    top: 0;
+    box-shadow: 0 11px 0 lightskyblue;
+    transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+}
+
+.burger::after {
+    bottom: 0;
+    transition: bottom .3s .15s, transform .3s;
+}
+
+.burger-checkbox:checked+.burger::before {
+    top: 11px;
+    transform: rotate(45deg);
+    /* box-shadow: 0 6px 0 rgba(0,0,0,0); */
+    transition: box-shadow .15s, top .3s, transform .3s .15s;
+}
+
+.burger-checkbox:checked+.burger::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition: bottom .3s, transform .3s .15s;
+}
+
+.ml-auto,
+.mx-auto {
+    margin-left: 0 !important;
+}
+
+/* .BurgerMenuNav */
+.CloseAndLogoBurgMen {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .BurgerMenuNav */
+.CloseAndLogoBurgMen {
+    margin-bottom: 1rem;
+}
+
+/* .BurgerMenuNav */
+.MuiPaper-root {
+    font-size: 1.8rem;
+    padding-left: 0.7rem;
+}
+
+
+
+/* .BurgerMenuNav */
+.MuiPaper-root .userNick {
+    margin-bottom: 2rem;
+    color: #1976D2;
+    display: block;
+    font-size: 1.8rem;
+}
+
+/* .BurgerMenuNav */
+.ButtonCloseburgMenu .IconCloseburgMenu {
+    /* display: inline-block; */
+    width: 3.5rem;
+    height: 3rem;
+    /* font-size: 5rem; */
+    color: #0E86D4;
+}
+
+/* .Drawerburgmenu */
+
+.MuiPaper-root .list-group-item {
+    border: none;
+    outline: none;
+    margin-right: 0.5rem;
+}
+
+.MuiPaper-root .list-group-item.active {
+    background: 0E86D4;
+    color: #fff;
+}
+
+.navbar-nav .button {
+    /* margin-left: 1.5rem; */
+    margin-left: 2.0rem;
+}
+
+.DeviceList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.deviceItem {
+    /* margin-top: 1rem; */
+    /* width: 16%; */
+    width: 16.667%;
+
+}
+
+.deviceItem .wrapper {
+    width: 13rem;
+    height: 17rem;
+    margin: 0 auto;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.deviceItem .wrapper img {
+    /* width: 13rem;
+    height: 17rem;
+    margin: 0 auto;
+    padding: 10px 10px; */
+    width: 100%;
+    max-height: 100%;
+
+}
+
+.deviceItem .rating {
+    width: 13rem;
+    display: flex;
+    justify-content: center;
+}
+
+.deviceItem .price {
+    font-size: 1.5rem;
+    color: #3489e5;
+    /* padding: 0 10px; */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.51rem;
+}
+
+.deviceItem .priceAndBasket button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #0E86D4; */
+    /* background: #4C719E; */
+    background: #237faec4;
+    border: none;
+    border-radius: 0.50rem !important;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 51%);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!   DEVICE PAGE   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+/* DevicePage.......................................................... */
+.DevicePage {
+    color: #4c719e;
+}
+
+
+.DevicePage .ImageAndInfoAndActivesRow {
+    display: flex;
+    justify-content: center;
+    padding: 0 4rem;
+    justify-content: space-around;
+}
+
+
+.DevicePage .PriceAndAddCartButton button {
+    color: #fff;
+    border: none;
+    background: #4c719e73;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 51%);
+
+}
+
+/* Charakhteristics */
+.DevicePage .d-flex.flex-column.m-3.row div:nth-child(even) {
+    background: #4c719e45 !important;
+    padding: 10px;
+
+}
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* catalog.......................................... */
+
+.catalog .typeBar_SliderCarousel {
+    display: flex;
+}
+
+.catalog .typeBar {
+    width: 15%;
+}
+
+.catalog .carousel {
+    /* width: 85%; */
+    width: 100%;
+
+}
+
+.catalog .carousel img {
+    width: 100%;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!DeviceList!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
+
+
+
+.DeviceList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.deviceItem {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+
+
+
+
+
+.catalog .list-group-item {
+    border: none;
+    padding-top: 0;
+    padding-bottom: 2rem;
+}
+
+.catalog .col-md-3 {
+    margin-top: 1rem;
+    /* max-width: 15%; */
+
+}
+
+.catalog .deviceItem {
+    width: 16.667%;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog .type p2 {
+    padding-bottom: 2rem;
+}
+
+
+/* type............................................. */
+
+.SortPrice .Button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #4c719e;
+}
+
+.SortPrice .Button svg {
+    margin-right: 8px;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* .Filters{ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+
+
+.Filters h5 {
+    color: #4c719e;
+}
+
+.Filters .btn-primary {
+    color: #fff;
+    background-color: #3c79bb8f;
+    border-color: #3d6c9f00;
+    width: 7.0rem;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 51%);
+
+}
+
+.Filters 
+.MuiSlider-root
+/* .css-188mx6n-MuiSlider-root  */
+{
+    color: #21568b91;
+    width: 95%;
+}
+
+
+.Filters .list-group-item.active {
+    z-index: 2;
+    color: #fff !important;
+    background-color: #3061959c;
+    border-color: #1a579700;
+}
+
+.Filters .p-3.list-group-item {
+    color: #4c719e !important;
+    /* color: white !important; */
+}
+
+/* .Filters */
+
+.type .p-3.list-group-item {
+    border: none;
+    padding: 0.5rem 0 !important;
+}
+
+.type .p-3.list-group-item.active {
+    border: none;
+    padding: 0.5rem 0 !important;
+    color: white !important;
+}
+
+/* .Filters */
+.price-range-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    /* font-size: 14px; */
+    color: #4c719e;
+    padding: 0 1.99995rem;
+}
+
+/* .Filters */
+.list-group {
+
+    margin-top: 1.95rem;
+}
+
+
+
+
+
+/* !!!ADAPTIVE FILTERS DRAWER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.DrawerLeft_for_Filters 
+.MuiPaper-root {
+    width: 25rem !important;
+    /* width: 80% !important; */
+    background-color: #4c719eed;
+    border-radius: 0;
+    padding-right: 0.7rem;
+}
+
+.DrawerLeft_for_Filters 
+.CloseAdaptiveFiltersDrawerButton
+svg 
+/* .css-i4bv87-MuiSvgIcon-root */
+ {
+    font-size: 2.995rem;
+}
+
+
+
+
+.DrawerLeft_for_Filters 
+.Filters 
+/* .css-188mx6n-MuiSlider-root */
+.MuiSlider-root 
+{
+    /* color: #21568b91; */
+    color: #ffffff;
+    width: 85%;
+}
+
+
+
+.DrawerLeft_for_Filters .CloseAdaptiveFiltersDrawerButton {
+    color: white !important;
+    width: 2.905rem !important;
+    min-width: 0.000001rem !important;
+    background: #ff000000 !important;
+    margin-bottom: 1.995rem !important;
+}
+
+.DrawerLeft_for_Filters .CloseAdaptiveFiltersDrawerButton .css-i4bv87-MuiSvgIcon-root {
+    font-size: 2.995rem;
+}
+
+
+
+.type .adaptiveFiltersDrawerButton {
+    display: none;
+    background: red;
+}
+
+.DrawerLeft_for_Filters .Filters .btn-primary {
+    /* background-color: #3c79bb8f; */
+    background-color: #ffffff;
+    border-color: #3d6c9f00;
+    width: 7.0rem;
+    margin-bottom: 1.5rem;
+    color: #4c719e;
+}
+
+.DrawerLeft_for_Filters .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+    background-color: #4c719eed !important;
+}
+
+.DrawerLeft_for_Filters h5 {
+    display: none !important;
+}
+
+.DrawerLeft_for_Filters .Filters .css-188mx6n-MuiSlider-root {
+    /* color: #21568b91; */
+    color: #ffffff;
+    width: 85%;
+}
+
+.DrawerLeft_for_Filters .MuiBox-root.css-1v5z18m {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.DrawerLeft_for_Filters .price-range-container {
+    display: flex;
+    justify-content: space-between !important;
+    margin-top: 8px;
+    /* font-size: 14px; */
+    /* color: #4c719e; */
+    color: white;
+    padding: 0 1.99995rem;
+    /* background: red; */
+    width: 80%;
+}
+
+.DrawerLeft_for_Filters .Filters {
+    font-size: 1.15rem;
+}
+
+.DrawerLeft_for_Filters .Filters .p-3.list-group-item {
+    color: #ffffff !important;
+}
+
+.DrawerLeft_for_Filters .Filters .p-3.list-group-item.active {
+    /* color: #ffffff !important; */
+    color: #4c719e !important;
+    /* background: #92b0d5; */
+    /* background: #ffffff; */
+    background: #c9def7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+.type {
+    display: flex;
+}
+
+.type .DeviceListAndPages {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+}
+
+
+
+.type.container .row {
+    display: flex;
+    flex-wrap: nowrap;
+    /* width: 100%; */
+    /* justify-content: space-between; */
+}
+
+
+
+.type .brands {
+    /* max-width: 17%; */
+    width: 20%;
+}
+
+.type .DeviceListAndPages {
+    width: 93%;
+}
+
+.type .DeviceList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.type .deviceItem {
+    width: 20%;
+}
+
+.deviceItem {
+    padding-left: 3px;
+    padding-right: 0;
+}
+
+.deviceItem .card {
+    margin-bottom: 10px;
+    width: 13rem !important;
+}
+
+
+.deviceItem .name {
+    word-break: break-word;
+    -ms-word-break: break-word;
+    padding: 5px 10px 0;
+    margin-bottom: 5px;
+
+    overflow: hidden;
+    /* max-height: 5rem; */
+    height: 5rem;
+    /* white-space: nowrap; */
+    /* text-overflow: ellipsis; */
+}
+
+.align-items-center {
+    -ms-flex-align: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.deviceItem .priceAndBasket {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    width: 13rem;
+    padding: 10px 10px;
+}
+
+
+
+.deviceItem .css-d1ybhn-MuiRating-root {
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+/* .navbar navbar-expand navbar-dark bg-dark */
+.bg-primary {
+    background: #3489e5;
+}
+
+.list-group-item {
+    background: inherit;
+}
+
+.buttonAddDevice {
+    background-color: #3489e5;
+}
+
+
+
+
+.DevicePage .ColImage .Image {
+    width: 37rem;
+}
+
+.DevicePage h2 {
+    font-weight: 400;
+    margin-bottom: 1.995rem;
+
+}
+
+.DevicePage .ratingStars {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.Row.PriceAndAddCartButton {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+/* .DevicePage .infoAndActivesCol button {
+    margin-left: auto;
+} */
+
+.DevicePage .infoAndActivesCol .code {
+    margin-left: auto;
+}
+
+.DevicePage .infoAndActivesCol {
+    /* align-items: center; */
+    /* max-width: 70%; */
+    margin-left: 1.5rem;
+    flex-direction: column;
+}
+
+
+
+.DevicePage .SetRate {
+    display: flex;
+    flex-direction: column;
+}
+
+.DevicePage h1 {
+    font-size: 2.rem;
+    font-weight: 400;
+}
+
+/* Cart........................................................ */
+.Cart {
+    margin-bottom: 14.0rem;
+}
+
+.Cart .center {
+    justify-content: center;
+}
+
+.Cart .cart__top {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
+
+.Cart .content {
+    width: 75%;
+}
+
+
+
+.cart__item {
+    align-items: center;
+    /* justify-content: space-between; */
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+
+
+}
+
+.Cart .cart__item-img {
+    width: 8rem !important;
+    height: 13.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Cart .pizza-block__image {
+    width: 100%;
+    max-height: 13.5rem;
+    margin-right: 0.4rem;
+}
+
+.Cart .cart__item-info h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.Cart .cart__item-info {
+    width: 30rem;
+}
+
+.Cart .cart__item-count {
+    /* background: #61DAFB; */
+    display: flex;
+    align-items: center;
+    width: 9rem;
+    margin-left: auto;
+    padding: 0.5rem;
+    overflow: visible;
+
+}
+
+.Cart .cart__item-count .Row {
+    /* background: #61DAFB; */
+    /* background: inherit; */
+    /* border: none; */
+    justify-content: center;
+    overflow: visible;
+
+
+}
+
+
+
+
+.Cart .cart__item-count .button {
+    display: flex;
+    align-items: center;
+    /* background: #61DAFB; */
+    background: inherit;
+    /* background: red; */
+    border: none;
+    overflow: visible;
+    outline: none;
+    height: 2.5rem;
+    padding: 0.2rem;
+    height: 3.5rem;
+
+
+
+}
+
+.Cart .cart__item-price {
+    display: flex;
+    align-items: center;
+    width: 9rem;
+}
+
+.Cart .cart__item-remove {
+    display: flex;
+    align-items: center;
+}
+
+.Cart .cart__item-remove .button {
+    width: 3rem;
+}
+
+
+
+.cart--empty .Col.center.content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
+    justify-content: center;
+
+}
+
+.cart--empty .Col.center.content h2,
+.cart--empty .Col.center.content p {
+    display: flex;
+    justify-content: center;
+}
+
+.cart--empty .Col.center.content p {
+    text-align: center;
+}
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* .AUTHORIZATION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.Auth {
+    color: #4c719e;
+}
+
+
+
+.Auth .p-5.card {
+    width: 600px;
+    background: #44628726;
+    border: none;
+    border-radius: 1rem;
+}
+
+.Auth input.form-control {
+    color: #4c719e !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* .Pages !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+
+.Pages .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #246c9b80;
+    border-color: #007bff00;
+}
+
+.Pages .page-link {
+    color: #4c719e;
+    border: 1px solid #405a7427;
+}
+
+.Pages {
+    margin-left: 3.9rem;
+    background: #ececed;
+}

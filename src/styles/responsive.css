@@ -1,0 +1,255 @@
+@media screen and (max-width:1350px) {
+
+    .catalog .deviceItem {
+        width: 20%
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .catalog .deviceItem {
+        width: 25%
+    }
+
+    .type .deviceItem {
+        width: 25%;
+    }
+
+    .type .DeviceListAndPages {
+        width: 90%;
+    }
+
+    .Cart .cart__item-info {
+        width: 45%;
+    }
+
+    .userNick {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:992px) {
+    html {
+        font-size: 78.75%;
+    }
+
+    .BurgerMenuNav {
+        display: block;
+    }
+
+    .catalog .typeBar {
+        display: none;
+    }
+
+    .BurgerMenuNav .catalogButton {
+        display: inline-block;
+    }
+
+    .catalog .carousel {
+        width: 100%;
+    }
+
+    .type .brands {
+        display: none;
+        width: 0;
+    }
+
+    .type .adaptiveFiltersDrawerButton {
+        display: inline-block;
+    }
+
+    .type .adaptiveFiltersDrawerButton {
+        display: flex;
+        background: #4c719e6e;
+        color: white;
+        width: 10rem;
+        margin-left: 1.992rem;
+        border: none;
+        outline: none;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 6px rgb(0 0 0 / 51%);
+
+    }
+
+    
+
+
+    .type .DeviceListAndPages {
+        width: 100%;
+    }
+
+    .Cart .content {
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width:920px) {
+    html {
+        font-size: 70.75%;
+    }
+}
+
+@media screen and (max-width:850px) {
+    .HeaderBottomBar .buttonDrawerBrandBar {
+        display: inline-block;
+    }
+
+    .Cart .cart__item-count {
+        width: 8rem;
+
+    }
+
+    .Cart .cart__item-price {
+        width: 7rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .catalog .deviceItem {
+        width: 33%;
+    }
+
+    .type .deviceItem {
+        width: 33%;
+    }
+
+    .DevicePage .infoAndActivesCol .code {
+        margin-left: 0;
+    }
+
+    /* .Cart .content {
+        width: 100%;
+    } */
+}
+
+
+@media screen and (max-width:700px) {
+    .DevicePage .ImageAndInfoAndActivesRow {
+        flex-direction: column;
+    }
+
+    .DevicePage .ColImage {
+        /* width: 37rem; */
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .DevicePage .infoAndActivesCol .code {
+        margin-left: auto;
+    }
+
+    .DevicePage .infoAndActivesCol button {
+        margin-left: auto;
+    }
+
+    .navbar .ml-auto.navbar-nav {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .catalog .deviceItem {
+        width: 50%;
+    }
+
+    .type .deviceItem {
+        width: 50%;
+    }
+
+    html {
+        font-size: 64.35%;
+
+    }
+
+    .DevicePage .ImageAndInfoAndActivesRow {
+        padding: 0.2rem;
+    }
+
+    .container {
+        padding: 0.7rem 0.7rem;
+    }
+
+
+    .logo {
+        margin-right: auto;
+    }
+
+}
+
+/* @media screen and (max-width:560px) {
+    .navbar .navbar-nav {
+        margin-left: auto !important
+    }
+} */
+
+
+@media screen and (max-width:500px) {
+    html {
+        /* font-size: 70%; */
+    }
+
+    .navbar .navbar-nav {
+        margin-left: auto !important
+            /* !important; */
+    }
+
+    .DevicePage .ColImage .Image {
+        width: 100%;
+    }
+
+    .Cart .cart__item-info {
+        width: 70%;
+    }
+
+    .navbar .navbar-nav {
+        margin-left: auto !important
+    }
+
+    .navbar-nav button {
+        display: none;
+    }
+
+    .MuiPaper-root .userNick {
+        /* margin-bottom: 2rem; */
+        color: #1976D2;
+        font-size: 1rem;
+    }
+
+    .navbar .SearchButton {
+        display: flex;
+    }
+
+    .navbar .Search {
+        display: none;
+    }
+
+
+
+}
+
+@media screen and (max-width:340px) {
+    .catalog .deviceItem {
+        width: 100%;
+    }
+
+    .Cart .cart__item-info {
+        width: 60%;
+    }
+
+
+}
+
+@media screen and (max-width:310px) {
+    .catalog .deviceItem {
+        width: 100%;
+    }
+
+    .type .deviceItem {
+        width: 100%;
+    }
+
+
+}
