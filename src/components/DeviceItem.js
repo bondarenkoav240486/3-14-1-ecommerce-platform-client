@@ -10,7 +10,7 @@ import { useContext } from 'react';
 import { Context } from "../index";
 import { observer } from "mobx-react-lite";
 
-import { addToBasket } from "../http/userAPI";
+// import { addToBasket } from "../http/userAPI";
 
 // import LocalMallIcon from '@mui/icons-material/LocalMall';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
@@ -99,7 +99,8 @@ const DeviceItem = observer(({ device }) => {
                         () => onClickAddToCart()
                     }
                 >
-                    {cart.items.find((obj) => obj.id === device.id)
+                    {/* {cart.items.find((obj) => obj.id === device.id) */}
+                    {findItem
                         ?
                         <DoneOutlinedIcon style={{ color: 'white' }} />
                         :

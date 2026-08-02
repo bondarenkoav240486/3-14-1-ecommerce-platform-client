@@ -2,23 +2,18 @@ import { makeAutoObservable } from "mobx";
 import { getCartFromLS } from '../utils/getCartFromLS';
 import { calcTotalPrice } from '../utils/calcTotalPrice';
 import {
+    getBasket,
     addToBasket,
-    minusFromBasket,
-    fetchDevicesFromBasket,
+    deleteFromBasket,
     clearBasket,
-    deleteFromBasket
-} from "../http/userAPI";
+} from "../http/basketAPI";
 
 const CartState = getCartFromLS();
 
 export default class CartStore {
     constructor() {
-        // const CartState = getCartFromLS();
-        // this._isAuth = false
         this._totalPrice = CartState.totalPrice
-        // this._totalPrice = 0
         this._items = CartState.items
-        // this._items = [1, 2, 3]
         this.isUserAuth = false
         makeAutoObservable(this)
     }
@@ -37,137 +32,143 @@ export default class CartStore {
         return this._items
     }
 
-    addItem(item, user) {
-        // const findItem = cart.items.find((obj) => obj.id === item.id);
-        const findItem = this._items.find((obj) => obj.id === item.id);
-        if (findItem) {
-            findItem.count++;
-        } else {
-            const items = this._items
-            items.push({
-                ...item,
-                count: 1,
-            });
-            this.setItems(items)
-        }
-        this.setTotalPrice(+calcTotalPrice(this._items));
-
+    async addItem(item, user) {
         if (user.isAuth) {
-            addToBasket(user.user.id, item.id)
+            await addToBasket(item.id);
+            await this.getCartFromDB();
         } else {
-            this.writeToLocalStorage(this._items)
+            const findItem = this._items.find(obj => obj.id === item.id);
+            if (findItem) {
+                findItem.count++;
+            } else {
+                this._items.push({
+                    ...item,
+                    count: 1,
+                });
+            }
+            // this.setItems([...this._items]);
+            // this.setTotalPrice(calcTotalPrice(this._items));
+            // this.writeToLocalStorage(this._items);
+            this.updateLocalCart();
         }
     }
 
-    minusItem(id, user) {
-        const findItem = this._items.find((obj) => obj.id === id);
-        if (findItem) {
-            findItem.count--;
-        }
-        console.log(
-            'user : ', user
-            // user.isAuth
-        )
-        this._totalPrice = calcTotalPrice(this._items);
-        // this.writeToLocalStorage(this._items)
-
+    async minusItem(id, user) {
         if (user.isAuth) {
-            // minusFromBasket(user.user.id, item.id)
-            minusFromBasket(user.user.id, id)
+            await deleteFromBasket(id);
+            await this.getCartFromDB();
         } else {
-            this.writeToLocalStorage(this._items)
+            const findItem = this._items.find(obj => obj.id === id);
+            if (findItem) {
+                findItem.count--;
+                if (findItem.count === 0) {
+                    this._items = this._items.filter(obj => obj.id !== id);
+                }
+                // this.setItems([...this._items]);
+                // this.setTotalPrice(calcTotalPrice(this._items));
+                // this.writeToLocalStorage(this._items);
+                this.updateLocalCart();
+            }
         }
     }
 
-    // removeItem(id) {
-    //     this._items = this._items.filter((obj) => obj.id !== id);
-    //     this._totalPrice = calcTotalPrice(this._items);
-    //     this.writeToLocalStorage(this._items)
-    // }
     async removeItem(id, user) {
-        // this._items = this._items.filter((obj) => obj.id !== id);
-        // this._totalPrice = calcTotalPrice(this._items);
         if (user.isAuth) {
-            // Remove item from the database if the user is authenticated
-            await deleteFromBasket(user.user.id, id);
-            await this.getCartFromDB(user.user.id)
+            await deleteFromBasket(id);
+            await this.getCartFromDB();
         } else {
-            // Remove item from local storage if the user is not authenticated
-            this._items = this._items.filter((obj) => obj.id !== id);
-            this.writeToLocalStorage(this._items);
-            this.setItems(this._items)
+            this._items = this._items.filter(obj => obj.id !== id);
+            // this.setItems([...this._items]);
+            // this.setTotalPrice(calcTotalPrice(this._items));
+            // this.writeToLocalStorage(this._items);
+            this.updateLocalCart();
         }
-        // this._items = this._items.filter((obj) => obj.id !== id);
-        this._totalPrice = calcTotalPrice(this._items);
     }
 
-    clearItems(user) {
-        // this._items = [];
-        this.setItems([]);
-        this.setTotalPrice(0);
-        // localStorage.removeItem('cart');
-        // this.writeToLocalStorage(this._items)
+    async clearItems(user) {
         if (user.isAuth) {
-            // minusFromBasket(user.user.id, item.id)
-            clearBasket(user.user.id)
+            await clearBasket();
+            await this.getCartFromDB();
         } else {
-            localStorage.removeItem('cart');
-            this.writeToLocalStorage(this._items)
+            // localStorage.removeItem('cart');
+            // this.writeToLocalStorage(this._items)
+            // this.setItems([]);
+            // this.setTotalPrice(0);
+            // this.writeToLocalStorage([]);
+            this.clearLocalCart();
         }
     }
 
     writeToLocalStorage(cartItems) {
         localStorage.setItem('cart', JSON.stringify(cartItems));
     }
+    updateLocalCart() {
+        this.setItems([...this._items]);
+        this.setTotalPrice(calcTotalPrice(this._items));
+        this.writeToLocalStorage(this._items);
+    }
+    clearLocalCart() {
+        this.setItems([]);
+        this.setTotalPrice(0);
+        this.writeToLocalStorage([]);
+    }
 
-    async getCartFromDB(userId) {
-        let devices = await fetchDevicesFromBasket(userId);
-        let items = [];
-        devices.forEach(
-            (item) => {
-                const findItem = items.find((obj) => obj.id === item.id);
-                if (findItem) {
-                    findItem.count++;
-                } else {
-                    items.push({
-                        ...item,
-                        count: 1,
-                    });
-                }
-            }
-        )
-        const totalPrice = calcTotalPrice(items);
+    async getCartFromDB() {
+        const basket = await getBasket();
+        if (!basket || !basket.basket_devices) {
+            this.setItems([]);
+            this.setTotalPrice(0);
+            return;
+        }
+        const items = basket.basket_devices.map(item => ({
+            ...item.device,
+            count: item.quantity
+        }));
         this.setItems(items);
-        this.setTotalPrice(totalPrice);
-        // return {
-        //     // items: items as CartItem[],
-        //     items: items,
-        //     totalPrice,
-        // };
+        this.setTotalPrice(basket.totalPrice || 0);
     }
 
     getCartFromLSmethod() {
         const data = localStorage.getItem('cart');
         const items = data ? JSON.parse(data) : [];
         const totalPrice = calcTotalPrice(items);
-
-        let result = {
-            items: items,
-            totalPrice,
-        };
         this.setItems(items);
         this.setTotalPrice(totalPrice);
-
         // return {
         //     items: items,
         //     totalPrice,
         // };
     }
 
+    async syncLocalCartToDB() {
 
+        if (!this._items.length) {
 
+            await this.getCartFromDB();
+            return;
+        }
 
+        const localItems = [...this._items];
+        // const localItems = [...this._items];
+        // if (!localItems.length) {
+        //     await this.getCartFromDB();
+        //     return;
+        // }
+        for (const item of localItems) {
+            for (let i = 0; i < item.count; i++) {
+                await addToBasket(item.id);
+            }
+        }
+        try {
+            localStorage.removeItem("cart");
+            // this.setItems([]);
+            // this.setTotalPrice(0);
+            await this.getCartFromDB();
 
+        } catch (e) {
 
+            console.log(e);
+        }
+    }
 
 }
