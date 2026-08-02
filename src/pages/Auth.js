@@ -28,19 +28,30 @@ const Auth = observer(() => {
     const [password, setPassword] = useState('')
 
     const click = async () => {
+        debugger
         try {
+            debugger
             let data;
+            debugger
             if (isLogin) {
+                debugger
                 data = await login(email, password);
+                debugger
             } else {
+                debugger
                 data = await registration(email, password);
+                debugger
             }
+            debugger
             user.setUser(user)
+            debugger
             user.setIsAuth(true)
+            debugger
             //history.push(SHOP_ROUTE)
             navigate(SHOP_ROUTE);
-            // await cart.getCartFromDB(user.user.id);
+            debugger
         } catch (e) {
+            debugger
             alert(e.response.data.message)
             // console.log(e)
             console.log(e.response.data.message)
@@ -71,11 +82,11 @@ const Auth = observer(() => {
                     <Row className="d-flex justify-content-between mt-3 pl-3 pr-3">
                         {isLogin ?
                             <div>
-                               Немає акаунту? <NavLink to={REGISTRATION_ROUTE}>Зареєструйтеся!</NavLink>
+                                Немає акаунту? <NavLink to={REGISTRATION_ROUTE}>Зареєструйтеся!</NavLink>
                             </div>
                             :
                             <div>
-                                 Вже маєте акаунт? <NavLink to={LOGIN_ROUTE}>Увійдіть!</NavLink>
+                                Вже маєте акаунт? <NavLink to={LOGIN_ROUTE}>Увійдіть!</NavLink>
                             </div>
                         }
                         <Button
@@ -83,7 +94,7 @@ const Auth = observer(() => {
                             className="mt-3 align-self-end"
                             onClick={click}
                         >
-                            {isLogin ?  'Увійти' : 'Зареєструватися'}
+                            {isLogin ? 'Увійти' : 'Зареєструватися'}
                         </Button>
                     </Row>
                 </Form>

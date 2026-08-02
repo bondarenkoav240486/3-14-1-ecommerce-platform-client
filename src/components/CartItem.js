@@ -26,7 +26,7 @@ const CartItem = observer(({
     };
 
     const onClickMinus = () => {
-        if (count > 1) {
+        if (count >= 1) {
             cart.minusItem(id, user);
         }
     };

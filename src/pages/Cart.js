@@ -31,7 +31,7 @@ const Cart = observer(() => {
                     <div className="cart__top Row">
                         <div className="Col">
                             <h2 className="content__title">
-                                Кошик
+                                Кошик  
                             </h2>
                         </div>
                         <div className="Col">
