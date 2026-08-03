@@ -33,7 +33,7 @@ const CartItem = observer(({
 
     const onClickRemove = () => {
         if (window.confirm('Ти справді хочеш видалити товар?')) {
-            cart.removeItem(id, user);
+            cart.removeAllItem(id, user);
         }
     };
 

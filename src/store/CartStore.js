@@ -4,7 +4,9 @@ import { calcTotalPrice } from '../utils/calcTotalPrice';
 import {
     getBasket,
     addToBasket,
-    deleteFromBasket,
+    // deleteFromBasket,
+    minusFromBasket,
+    removeAllFromBasket,
     clearBasket,
 } from "../http/basketAPI";
 
@@ -46,16 +48,13 @@ export default class CartStore {
                     count: 1,
                 });
             }
-            // this.setItems([...this._items]);
-            // this.setTotalPrice(calcTotalPrice(this._items));
-            // this.writeToLocalStorage(this._items);
             this.updateLocalCart();
         }
     }
 
     async minusItem(id, user) {
         if (user.isAuth) {
-            await deleteFromBasket(id);
+            await minusFromBasket(id);
             await this.getCartFromDB();
         } else {
             const findItem = this._items.find(obj => obj.id === id);
@@ -64,9 +63,6 @@ export default class CartStore {
                 if (findItem.count === 0) {
                     this._items = this._items.filter(obj => obj.id !== id);
                 }
-                // this.setItems([...this._items]);
-                // this.setTotalPrice(calcTotalPrice(this._items));
-                // this.writeToLocalStorage(this._items);
                 this.updateLocalCart();
             }
         }
@@ -74,13 +70,19 @@ export default class CartStore {
 
     async removeItem(id, user) {
         if (user.isAuth) {
-            await deleteFromBasket(id);
+            await minusFromBasket(id);
             await this.getCartFromDB();
         } else {
             this._items = this._items.filter(obj => obj.id !== id);
-            // this.setItems([...this._items]);
-            // this.setTotalPrice(calcTotalPrice(this._items));
-            // this.writeToLocalStorage(this._items);
+            this.updateLocalCart();
+        }
+    }
+    async removeAllItem(id, user) {
+        if (user.isAuth) {
+            await removeAllFromBasket(id);
+            await this.getCartFromDB();
+        } else {
+            this._items = this._items.filter(item => item.id !== id);
             this.updateLocalCart();
         }
     }
@@ -90,11 +92,6 @@ export default class CartStore {
             await clearBasket();
             await this.getCartFromDB();
         } else {
-            // localStorage.removeItem('cart');
-            // this.writeToLocalStorage(this._items)
-            // this.setItems([]);
-            // this.setTotalPrice(0);
-            // this.writeToLocalStorage([]);
             this.clearLocalCart();
         }
     }
@@ -134,10 +131,6 @@ export default class CartStore {
         const totalPrice = calcTotalPrice(items);
         this.setItems(items);
         this.setTotalPrice(totalPrice);
-        // return {
-        //     items: items,
-        //     totalPrice,
-        // };
     }
 
     async syncLocalCartToDB() {
@@ -149,11 +142,6 @@ export default class CartStore {
         }
 
         const localItems = [...this._items];
-        // const localItems = [...this._items];
-        // if (!localItems.length) {
-        //     await this.getCartFromDB();
-        //     return;
-        // }
         for (const item of localItems) {
             for (let i = 0; i < item.count; i++) {
                 await addToBasket(item.id);
@@ -161,12 +149,9 @@ export default class CartStore {
         }
         try {
             localStorage.removeItem("cart");
-            // this.setItems([]);
-            // this.setTotalPrice(0);
             await this.getCartFromDB();
 
         } catch (e) {
-
             console.log(e);
         }
     }
