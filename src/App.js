@@ -16,40 +16,67 @@ import './styles/responsive.css';
 
 
 const App = observer(() => {
-    const { user } = useContext(Context)
-    const { cart } = useContext(Context)
+    // const { user } = useContext(Context)
+    // const { cart } = useContext(Context)
+    const { user, cart } = useContext(Context);
     const [loading, setLoading] = useState(true)
-
     useEffect(() => {
-        check()
-            .catch(
-                function (error) {
-                    // выполнение сразу перейдет сюда
-                    console.log(error);
-                    console.log(cart.items);
-                    // cart.getCartFromLS();
-                }
-            )
-            .then(data => {
-                // user.setUser();
-                // user.setUser(true);
+        const init = async () => {
+            try {
+                const data = await check();
+
                 if (data) {
-                    user.setIsAuth(true);
                     user.setUser(data);
-                    cart.getCartFromDB();
-                    // user.setUser(data);
+                    user.setIsAuth(true);
 
-                    // cart.syncLocalCartToDB();
-                    // user.setIsAuth(true);
+                    await cart.getCartFromDB();
+                }
 
-                };
-                // user.setIsAuth()
-                user.setIsAuth(true);
+            } catch (e) {
+                console.log(e);
 
-            })
-            .finally(() => setLoading(false))
+                user.setUser({});
+                user.setIsAuth(false);
 
-    }, [])
+                cart.getCartFromLSmethod();
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        init();
+    }, []);
+
+    // useEffect(() => {
+    //     check()
+    //         .catch(
+    //             function (error) {
+    //                 // выполнение сразу перейдет сюда
+    //                 console.log(error);
+    //                 console.log(cart.items);
+    //                 // cart.getCartFromLS();
+    //             }
+    //         )
+    //         .then(data => {
+    //             // user.setUser();
+    //             // user.setUser(true);
+    //             if (data) {
+    //                 user.setIsAuth(true);
+    //                 user.setUser(data);
+    //                 cart.getCartFromDB();
+    //                 // user.setUser(data);
+
+    //                 // cart.syncLocalCartToDB();
+    //                 // user.setIsAuth(true);
+
+    //             };
+    //             // user.setIsAuth()
+    //             user.setIsAuth(true);
+
+    //         })
+    //         .finally(() => setLoading(false))
+
+    // }, [])
     // useEffect(() => {
     //     const init = async () => {
     //         try {
@@ -79,27 +106,27 @@ const App = observer(() => {
     //     init();
     // }, []);
 
-    useEffect(() => {
-        if (user.isAuth == false) {
+    // useEffect(() => {
+    //     if (user.isAuth == false) {
 
-        } else {
-            check()
-                .catch(
-                    function (error) {
-                        // выполнение сразу перейдет сюда
-                        console.log(error);
-                    }
-                )
-                .then(
-                    data => {
-                        if (data) {
-                            // user.setUser(data);
-                            // cart.getCartFromDB();
-                        }
-                    }
-                )
-        }
-    }, [user.isAuth])
+    //     } else {
+    //         check()
+    //             .catch(
+    //                 function (error) {
+    //                     // выполнение сразу перейдет сюда
+    //                     console.log(error);
+    //                 }
+    //             )
+    //             .then(
+    //                 data => {
+    //                     if (data) {
+    //                         // user.setUser(data);
+    //                         // cart.getCartFromDB();
+    //                     }
+    //                 }
+    //             )
+    //     }
+    // }, [user.isAuth])
 
     // useEffect(() => {
     //     const init = async () => {
@@ -127,9 +154,16 @@ const App = observer(() => {
     //     init();
     // }, [user, cart]);
 
+    // if (loading) {
+    //     return <Spinner animation={"grow"} />
+    // }
     if (loading) {
-        return <Spinner animation={"grow"} />
-    }
+    return (
+        <div className="d-flex justify-content-center align-items-center vh-100">
+            <Spinner animation="grow" />
+        </div>
+    );
+}
 
     return (
         <BrowserRouter>
