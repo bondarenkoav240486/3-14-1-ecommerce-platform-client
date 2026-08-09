@@ -134,13 +134,10 @@ export default class CartStore {
     }
 
     async syncLocalCartToDB() {
-
         if (!this._items.length) {
-
             await this.getCartFromDB();
             return;
         }
-
         const localItems = [...this._items];
         for (const item of localItems) {
             for (let i = 0; i < item.count; i++) {
@@ -148,9 +145,8 @@ export default class CartStore {
             }
         }
         try {
-            localStorage.removeItem("cart");
+            // localStorage.removeItem("cart");
             await this.getCartFromDB();
-
         } catch (e) {
             console.log(e);
         }

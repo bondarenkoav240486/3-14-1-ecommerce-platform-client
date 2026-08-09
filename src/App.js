@@ -5,7 +5,7 @@ import AppRouter from "./components/AppRouter";
 import NavBar from "./components/NavBar";
 import { observer } from "mobx-react-lite";
 import { Context } from "./index";
-import { check } from "./http/userAPI";
+// import { check } from "./http/userAPI";
 import { Spinner } from "react-bootstrap";
 
 // import './scss/app.scss';
@@ -23,27 +23,24 @@ const App = observer(() => {
     useEffect(() => {
         const init = async () => {
             try {
-                const data = await check();
-
-                if (data) {
-                    user.setUser(data);
-                    user.setIsAuth(true);
-
+                const isAuth = await user.init();
+                if (isAuth) {
+                    // user.setUser(data);
+                    // user.setIsAuth(true);
                     await cart.getCartFromDB();
+                } else {
+                    cart.getCartFromLSmethod();
                 }
+            // } catch (e) {
+                // console.log(e);
+                // user.setUser({});
+                // user.setIsAuth(false);
+                // cart.getCartFromLSmethod();
 
-            } catch (e) {
-                console.log(e);
-
-                user.setUser({});
-                user.setIsAuth(false);
-
-                cart.getCartFromLSmethod();
             } finally {
                 setLoading(false);
             }
         };
-
         init();
     }, []);
 
@@ -158,12 +155,12 @@ const App = observer(() => {
     //     return <Spinner animation={"grow"} />
     // }
     if (loading) {
-    return (
-        <div className="d-flex justify-content-center align-items-center vh-100">
-            <Spinner animation="grow" />
-        </div>
-    );
-}
+        return (
+            <div className="d-flex justify-content-center align-items-center vh-100">
+                <Spinner animation="grow" />
+            </div>
+        );
+    }
 
     return (
         <BrowserRouter>
