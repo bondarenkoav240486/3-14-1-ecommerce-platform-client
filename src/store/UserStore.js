@@ -1,12 +1,11 @@
 import { makeAutoObservable } from "mobx";
 
-import { check } from "../http/userAPI";
+import { check, login, registration } from "../http/userAPI";
 
 
 export default class UserStore {
     constructor() {
         this._isAuth = false
-        // this._isAuth = true
         this._user = {}
         makeAutoObservable(this)
     }
@@ -43,17 +42,26 @@ export default class UserStore {
         }
     }
 
-    // async init(cart) {
-
-    //     const isAuth = await this.checkAuth();
-
-    //     if (isAuth) {
-    //         await cart.syncLocalCartToDB();
-    //     } else {
-    //         cart.getCartFromLSmethod();
-    //     }
-    // }
     async init() {
-        return await this.checkAuth();
+        return this.checkAuth();
     }
+
+    async login(email, password) {
+        const data = await login(email, password);
+
+        this.setUser(data);
+        this.setIsAuth(true);
+
+        return data;
+    }
+
+    async register(email, password) {
+        const data = await registration(email, password);
+
+        this.setUser(data);
+        this.setIsAuth(true);
+
+        return data;
+    }
+
 }

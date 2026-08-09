@@ -3,16 +3,21 @@ import { Container, Form } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
-import { NavLink, useLocation, useHistory, useNavigate } from "react-router-dom";
+import {
+    NavLink, useLocation,
+    // useHistory,
+    useNavigate
+} from "react-router-dom";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from "../utils/consts";
-import { login, registration } from "../http/userAPI";
+// import { login, registration } from "../http/userAPI";
 import { observer } from "mobx-react-lite";
 import { Context } from "../index";
 
 
 const Auth = observer(() => {
-    const { user } = useContext(Context)
-    const { cart } = useContext(Context)
+    // const { user } = useContext(Context)
+    // const { cart } = useContext(Context)
+    const { user, cart } = useContext(Context);
     const location = useLocation()
     // console.log(location);
     // const history = useHistory()
@@ -28,33 +33,24 @@ const Auth = observer(() => {
     const [password, setPassword] = useState('')
 
     const click = async () => {
-        debugger
         try {
-            debugger
-            let data;
-            debugger
+            // let data;
             if (isLogin) {
-                debugger
-                data = await login(email, password);
-                debugger
+                // data = await login(email, password);
+                await user.login(email, password);
             } else {
-                debugger
-                data = await registration(email, password);
-                debugger
+                // data = await registration(email, password);
+                await user.register(email, password);
             }
-            debugger
-            user.setUser(user)
-            debugger
-            user.setIsAuth(true)
-            debugger
-            //history.push(SHOP_ROUTE)
+            // user.setUser(data)
+            // user.setIsAuth(true)
+            // await cart.getCartFromDB();
+            await cart.syncLocalCartToDB();
+
             navigate(SHOP_ROUTE);
-            debugger
         } catch (e) {
-            debugger
-            alert(e.response.data.message)
-            // console.log(e)
-            console.log(e.response.data.message)
+            console.error(e);
+            alert(e.response?.data?.message || 'Помилка авторизації');
         }
     }
 
