@@ -16,7 +16,6 @@ export default class CartStore {
     constructor() {
         this._totalPrice = CartState.totalPrice
         this._items = CartState.items
-        this.isUserAuth = false
         makeAutoObservable(this)
     }
 
@@ -95,19 +94,24 @@ export default class CartStore {
             this.clearLocalCart();
         }
     }
-
-    writeToLocalStorage(cartItems) {
-        localStorage.setItem('cart', JSON.stringify(cartItems));
+    getLocalCart() {
+        const data = localStorage.getItem('cart');
+        return data ? JSON.parse(data) : [];
     }
+
+    saveLocalCart(items) {
+        localStorage.setItem('cart', JSON.stringify(items));
+    }
+
     updateLocalCart() {
         this.setItems([...this._items]);
         this.setTotalPrice(calcTotalPrice(this._items));
-        this.writeToLocalStorage(this._items);
+        this.saveLocalCart(this._items);
     }
     clearLocalCart() {
         this.setItems([]);
         this.setTotalPrice(0);
-        this.writeToLocalStorage([]);
+        this.saveLocalCart([]);
     }
 
     async getCartFromDB() {
@@ -126,9 +130,9 @@ export default class CartStore {
     }
 
     getCartFromLSmethod() {
-        const data = localStorage.getItem('cart');
-        const items = data ? JSON.parse(data) : [];
+        const items = this.getLocalCart();
         const totalPrice = calcTotalPrice(items);
+
         this.setItems(items);
         this.setTotalPrice(totalPrice);
     }
